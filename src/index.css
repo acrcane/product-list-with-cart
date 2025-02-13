@@ -1,0 +1,46 @@
+*,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Red Hat Text';
+    margin: unset;
+  }
+  button{cursor: pointer;}
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  li{
+    list-style: none;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+:root{
+  --main-red: hsl(14, 86%, 42%);
+  --main-green: hsl(159, 86%, 77%);
+  --main-gray: hsl(0, 0%, 55%);
+  --main-rose: hsl(354, 49%, 53%);
+  --main-text: rgb(37, 20, 14);
+  --main-theme: hsl(354, 35%, 89%);
+  --main-white: hsl(0, 0%, 100%);
+}
