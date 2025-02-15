@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector,  } from 'react-redux';
 import {
   ModalBackground,
   ModalContainer,
@@ -17,24 +16,15 @@ import {
   Price,
   TotalPrice,
   OrderBtn,
-  ProductBtn,
-  Icons,
+
   EmptyIcon
 } from './Modal.styled';
 import icons from '../../assets/images/symbol-defs.svg';
-import { decrementProduct, incrementProduct } from '../../redux/productReducer';
+
 
 export const Modal = ({ close }) => {
   const products = useSelector(store => store.productsList.products);
-  const dispatch = useDispatch();
-  const handleDecrement = productId => {
-    dispatch(decrementProduct({id: productId}));
-  };
-  const handleIncrement = productId => {
-    dispatch(incrementProduct({id: productId}));
-  };
-  const [isDisabled, setIsDisabled] = useState(true)
-  useEffect(() => {setIsDisabled(false)}, [products])
+
   return (
     <ModalBackground>
       <ModalContainer>
@@ -60,26 +50,13 @@ export const Modal = ({ close }) => {
                     <Amount>x{product.amount}</Amount>
                     <Price>${product.price}</Price>
                   </OrderInfoContainer>
-                  <TotalPrice>${product.total}</TotalPrice>
-                  <ProductBtn onClick={() => handleIncrement(product.id)}>
-                    <Icons >
-                      <use href={`${icons}#icon-icon-increment-quantity`} />
-                    </Icons>
-                  </ProductBtn>
-                  <ProductBtn onClick={() => handleDecrement(product.id)}>
-                    <Icons style={{fill: '#000'}}>
-                      <use href={`${icons}#icon-icon-decrement-quantity`} />
-                    </Icons>
-                  </ProductBtn>
+                  <TotalPrice>${!product.total ? product.price : product.total}</TotalPrice>
                 </ListItem>
               );
             })
           )}
         </List>
-          {/* {products.length === 0 ? (<OrderBtn disabled={isDisabled}>Order</OrderBtn>)
-          : (<OrderBtn disabled={setIsDisabled(true)}>Order</OrderBtn>)
-            } */}
-            <OrderBtn disabled={isDisabled}>Order</OrderBtn>
+            <OrderBtn disabled={products.length === 0}>Order</OrderBtn>
       </ModalContainer>
     </ModalBackground>
   );

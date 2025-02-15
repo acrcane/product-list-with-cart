@@ -100,11 +100,17 @@ text-align: center;
 `;
 export const OrderBtn = styled.button`
   height: 50px;
-  background-color: var(--main-red);
+  background-color: ${props => (props.disabled ? '#ccc' : 'var(--main-red)')};
   color: var(--main-white);
   border-radius: 30px;
-  border: none;
+  border: 1px solid var(--main-rose);
   outline: none;
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  transition: 0.2s ease-in-out;
+  &:hover{
+    background-color: ${props => (props.disabled ? '#ccc' : "var(--main-white)")};
+    color: ${props => (props.disabled ? '#ccc' : 'var(--main-rose)')};
+  }
   @media only screen and (min-width: 768px) {
     font-size: 1.5em;
 }
