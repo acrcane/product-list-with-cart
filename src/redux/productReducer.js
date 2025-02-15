@@ -37,21 +37,16 @@ const productSlice = createSlice({
       return {...state, products:[...state.products, {...action.payload, amount: 1}]}
     },
     decrementProduct(state, action) {
-        const product = state.products.find(elem => elem.id === action.payload.id)
-        if(product){
-            product.amount -= 1
-            product.total = product.amount / product.price
-        }
-        state.products.filter(product => product.amount > 0)
-
+        state.products = state.products.map((product) => product.id === action.payload.id ? {
+            ...product, amount: product.amount - 1, total: Math.max(0, (product.amount - 1) * product.price)
+        } : product).filter(product => product.amount > 0)
+        localStorage.setItem('cart', JSON.stringify(state.products))
     },
     incrementProduct(state, action){
-        const product = state.products.find(elem => elem.id === action.payload.id)
-        if(product){
-            product.amount += 1
-            product.total = product.amount * product.price
-        }
-        state.products.filter(product => product.amount > 0)
+        state.products = state.products.map((product) => product.id === action.payload.id ? {
+            ...product, amount: product.amount + 1, total: (product.amount + 1) * product.price
+        } : product)
+        localStorage.setItem('cart', JSON.stringify(state.products))
     }
   },
 });
