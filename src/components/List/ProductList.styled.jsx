@@ -116,16 +116,31 @@ width: 25px;
 height: 25px;
 border-radius: 50%;
 outline: none;
-border: 1px solid var(--main-rose);
+border: 1px solid var(--main-white);
 display: flex;
 justify-content: center;
 align-items: center;
+background-color: transparent;
+transition: 0.3s ease-in-out;
+&:hover, &:focus {
+    /* border: 1px solid var(--main-rose); */
+    background-color: var(--main-white);
+}
 `
-export const DecremetBtn = styled.button``
 export const AmoutSpan = styled.span`
 /* display: block; */
 width: 20px;
 height: 20px;
 text-align: center;
 color: var(--main-white);
+`
+export const Icon = styled.svg`
+width: 100%;
+height: 100%;
+fill: var(--main-white);
+transition: 0.3s ease-in-out;
+${AmounBtn}:hover &,
+${AmounBtn}:focus & {
+    fill: var(--main-rose);
+}
 `

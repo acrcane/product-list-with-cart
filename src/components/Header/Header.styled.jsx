@@ -16,16 +16,16 @@ export const Title = styled.h2`
 export const OpenModal = styled.button`
   border: none;
   outline: none;
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   background-color: transparent;
   position: relative;
   &::before{
     content: '${(props) => props.$count}';
     position: absolute;
-    font-size: 9px;
-    width: 10px;
-    height: 10px;
+    font-size: 12px;
+    width: 15px;
+    height: 15px;
     background-color: var(--main-white);
     border-radius: 50%;
     z-index: 2;
