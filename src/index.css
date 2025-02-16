@@ -37,7 +37,7 @@ code {
 }
 :root{
   --main-red: hsl(14, 86%, 42%);
-  --main-green: hsl(159, 86%, 77%);
+  --main-green: hsl(160, 47%, 70%);
   --main-gray: hsl(0, 0%, 55%);
   --main-rose: hsl(354, 49%, 53%);
   --main-text: rgb(37, 20, 14);

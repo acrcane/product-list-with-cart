@@ -13,6 +13,7 @@ import {
   ButtonsContainer,
   AmounBtn,
   AmoutSpan,
+  ImgHelper
 } from './ProductList.styled';
 import data from '../../data.json';
 import { addProduct, incrementProduct, decrementProduct  } from '../../redux/productReducer';
@@ -36,13 +37,16 @@ export const ProductList = () => {
   return (
     <List>
       {data.map((d, i) => {
-        const productCart = storeProducts.find(product => d.id === product.id);
-        console.log(d.image.mobile);
-        
+        const productCart = storeProducts.find(product => d.id === product.id);        
         return (
           <ListItem key={i}>
             <ImgContainer>
-            <Image src={d.image.mobile} alt={d.name} />
+            <Image>
+              <source media="(max-width: 767px)" srcSet={d.image.mobile}/>
+              <source media="(min-width: 768px)" srcSet={d.image.tablet} />
+              <source media='(min-width: 1440px)' srcSet={d.image.desktop} />
+              <ImgHelper src={d.image.thumbnail} alt={d.name} />
+            </Image>
               {productCart ? (
                 <ButtonsContainer>
                   <AmounBtn onClick={() => handleDecrement(productCart.id)}>-</AmounBtn>

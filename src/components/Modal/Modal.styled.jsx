@@ -73,13 +73,24 @@ export const ListItem = styled.li`
   padding: 10px 20px;
 `;
 export const ImgContainer = styled.div`
-  min-width: 25%;
+  width: 42%;
   height: 100%;
   background-color: #000;
 `;
-export const OrderImage = styled.img``;
+export const OrderPicture = styled.picture`width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+`;
+export const OrderImage = styled.img`
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+
+`;
 export const OrderInfoContainer = styled.div`
-  width: 50%;
+  width: 38%;
 `;
 export const OrderTitle = styled.h4`
   color: var(--main-text);
@@ -95,7 +106,7 @@ export const Price = styled.span`
   color: var(--main-text);
 `;
 export const TotalPrice = styled.span`
-width: 25%;
+width: 15%;
 text-align: center;
 `;
 export const OrderBtn = styled.button`
@@ -103,7 +114,7 @@ export const OrderBtn = styled.button`
   background-color: ${props => (props.disabled ? '#ccc' : 'var(--main-red)')};
   color: var(--main-white);
   border-radius: 30px;
-  border: 1px solid var(--main-rose);
+  border: 1px solid ${props => (props.disabled ? '#ccc' : 'var(--main-red)')};
   outline: none;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   transition: 0.2s ease-in-out;
@@ -114,26 +125,36 @@ export const OrderBtn = styled.button`
   @media only screen and (min-width: 768px) {
     font-size: 1.5em;
 }
-`;
-export const ProductBtn = styled.button`
-width: 52px;
-height: 32px;
-border: none;
-outline: none;
-border-radius: 50%;
-padding: 0;
-background-color: transparent;
-`
-export const Icons = styled.svg`
-width: 52px;
-height: 32px;
-fill: #10ce72;
-border: 1px solid #000;
-border-radius: 50%;
-padding: 3px;
 `
 
 export const EmptyIcon = styled.svg`
   width: 100%;
   height: 100%;
+`
+
+export const RemoveBtnContainer = styled.div`
+width: 5%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: start;
+`
+
+export const RemoveBtn = styled.button`
+width: 25px;
+height: 25px;
+border: 1px solid var(--main-rose);
+border-radius: 50%;
+outline: none;
+background-color: transparent;
+`
+export const RemoveIcon = styled.svg`
+width: 15px;
+height: 15px;
+fill: var(--main-rose);
+stroke: var(--main-rose);
+& use {
+    width: 15px;
+    height: 15px;
+  }
 `

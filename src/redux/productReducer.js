@@ -47,12 +47,15 @@ const productSlice = createSlice({
             ...product, amount: product.amount + 1, total: (product.amount + 1) * product.price
         } : product)
         localStorage.setItem('cart', JSON.stringify(state.products))
+    },
+    removeProduct(state, action) {
+      state.products = state.products.filter(product => product.id !== action.payload.id)
     }
   },
 });
 
 // Генератори екшенів
-export const { addProduct, decrementProduct, incrementProduct } = productSlice.actions;
+export const { addProduct, decrementProduct, incrementProduct, removeProduct } = productSlice.actions;
 // Редюсер слайсу
 export const productReducer = productSlice.reducer;
 

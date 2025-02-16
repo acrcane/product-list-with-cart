@@ -7,7 +7,7 @@ import {
   // SearchForm,
   // SearchInput,
 } from './Header.styled';
-import icons from '../../assets/images/symbol-defs.svg';
+import icons from '../../icons/symbol-defs.svg';
 import { useSelector,  } from 'react-redux';
 // import { searchProducts } from '../../redux/productReducer';
 

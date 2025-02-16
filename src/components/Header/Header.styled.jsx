@@ -44,6 +44,7 @@ export const BtnSvg = styled.svg`
   display: block;
   width: 100%;
   height: 100%;
+  fill: var(--main-rose);
 `;
 export const SearchForm = styled.form`
 width: 200px;

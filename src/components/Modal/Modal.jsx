@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector,  } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeProduct } from '../../redux/productReducer';
 import {
   ModalBackground,
   ModalContainer,
@@ -9,6 +10,7 @@ import {
   List,
   ListItem,
   ImgContainer,
+  OrderPicture,
   OrderImage,
   OrderInfoContainer,
   OrderTitle,
@@ -16,15 +18,19 @@ import {
   Price,
   TotalPrice,
   OrderBtn,
-
-  EmptyIcon
+  RemoveBtnContainer,
+  RemoveBtn,
+  EmptyIcon,
+  RemoveIcon,
 } from './Modal.styled';
-import icons from '../../assets/images/symbol-defs.svg';
-
+import icons from '../../icons/symbol-defs.svg';
 
 export const Modal = ({ close }) => {
   const products = useSelector(store => store.productsList.products);
-
+  const dispatch = useDispatch();
+  const handleRemove = productId => {
+    dispatch(removeProduct({ id: productId }));
+  };
   return (
     <ModalBackground>
       <ModalContainer>
@@ -35,28 +41,53 @@ export const Modal = ({ close }) => {
         <List>
           {products.length === 0 ? (
             <>
-            <h2 style={{textAlign: 'center'}}>Your shopping cart is empty</h2>
-            <EmptyIcon><use href={`${icons}#icon-illustration-empty-cart`}/></EmptyIcon>
+              <h2 style={{ textAlign: 'center' }}>
+                Your shopping cart is empty
+              </h2>
+              <EmptyIcon>
+                <use href={`${icons}#icon-illustration-empty-cart`} />
+              </EmptyIcon>
             </>
           ) : (
             products.map((product, index) => {
               return (
                 <ListItem key={index}>
                   <ImgContainer>
-                    <OrderImage src={product.image.thumbnail} />
+                    <OrderPicture>
+                      <source
+                        media="(max-width: 767px)"
+                        srcSet={product.image.mobile}
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcSet={product.image.tablet}
+                      />
+                      <source
+                        media="(min-width: 1440px)"
+                        srcSet={product.image.desktop}
+                      />
+                      <OrderImage src={product.image.thumbnail} />
+                    </OrderPicture>
                   </ImgContainer>
                   <OrderInfoContainer>
                     <OrderTitle>{product.name}</OrderTitle>
                     <Amount>x{product.amount}</Amount>
                     <Price>${product.price}</Price>
                   </OrderInfoContainer>
-                  <TotalPrice>${!product.total ? product.price : product.total}</TotalPrice>
+                  <TotalPrice>
+                    ${!product.total ? product.price : product.total}
+                  </TotalPrice>
+                  <RemoveBtnContainer>
+                  <RemoveBtn onClick={() => handleRemove(product.id)}>
+                    <RemoveIcon><use href={`${icons}#icon-icon-remove-item`}/></RemoveIcon>
+                  </RemoveBtn>
+                  </RemoveBtnContainer>
                 </ListItem>
               );
             })
           )}
         </List>
-            <OrderBtn disabled={products.length === 0}>Order</OrderBtn>
+        <OrderBtn disabled={products.length === 0}>Order</OrderBtn>
       </ModalContainer>
     </ModalBackground>
   );

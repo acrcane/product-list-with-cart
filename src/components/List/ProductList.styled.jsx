@@ -39,7 +39,14 @@ height: 245px;
 border-radius: 15px;
 border: 1px solid var(--main-rose);
 `
-export const Image = styled.img`
+export const Image = styled.picture`
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+border-radius: 15px;
+`
+export const ImgHelper = styled.img`
 width: 100%;
 height: 100%;
 object-fit: cover;
@@ -120,4 +127,5 @@ export const AmoutSpan = styled.span`
 width: 20px;
 height: 20px;
 text-align: center;
+color: var(--main-white);
 `
