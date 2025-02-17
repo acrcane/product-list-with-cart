@@ -139,6 +139,7 @@ width: 100%;
 height: 100%;
 fill: var(--main-white);
 transition: 0.3s ease-in-out;
+transform: scale(2);
 ${AmounBtn}:hover &,
 ${AmounBtn}:focus & {
     fill: var(--main-rose);
