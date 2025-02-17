@@ -153,6 +153,7 @@ width: 15px;
 height: 15px;
 fill: var(--main-rose);
 stroke: var(--main-rose);
+transform: scale(2);
 & use {
     width: 15px;
     height: 15px;
