@@ -16,8 +16,8 @@ export const Title = styled.h2`
 export const OpenModal = styled.button`
   border: none;
   outline: none;
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   background-color: transparent;
   position: relative;
   &::before{
@@ -45,7 +45,7 @@ export const BtnSvg = styled.svg`
   width: 100%;
   height: 100%;
   fill: var(--main-rose); 
-  transform: scale(3);
+  transform: scale(2);
 `;
 export const SearchForm = styled.form`
 width: 200px;

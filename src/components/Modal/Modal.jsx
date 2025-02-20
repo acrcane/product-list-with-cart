@@ -36,7 +36,7 @@ export const Modal = ({ close }) => {
       <ModalContainer>
         <TopContainer>
           <Title>Order list</Title>
-          <CloseBtn onClick={close}>X</CloseBtn>
+          <CloseBtn onClick={close}><RemoveIcon><use href={`${icons}#icon-icon-remove-item`}/></RemoveIcon></CloseBtn>
         </TopContainer>
         <List>
           {products.length === 0 ? (
