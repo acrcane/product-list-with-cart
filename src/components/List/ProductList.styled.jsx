@@ -129,8 +129,8 @@ transition: 0.3s ease-in-out;
 `
 export const AmoutSpan = styled.span`
 /* display: block; */
-width: 20px;
-height: 20px;
+width: 30px;
+height: 30px;
 text-align: center;
 color: var(--main-white);
 `
