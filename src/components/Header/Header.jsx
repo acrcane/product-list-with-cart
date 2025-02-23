@@ -1,36 +1,25 @@
 import React from 'react';
-import {
-  Header,
-  Title,
-  OpenModal,
-  BtnSvg,
-  // SearchForm,
-  // SearchInput,
-} from './Header.styled';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { Header, Title, OpenModal, BtnSvg } from './Header.styled';
 import icons from '../../icons/symbol-defs.svg';
-import { useSelector,  } from 'react-redux';
-// import { searchProducts } from '../../redux/productReducer';
+import { selectProducts } from '../../redux/selectors';
+
 
 export const HeaderCompnent = ({ open }) => {
-  // const dispatch = useDispatch()
-  const productsCounter = useSelector(store => store.productsList.products);
-  // const totalProducts = productsCounter.reduce(
-  //   (sum, item) => sum + item.amount,
-  //   0
-  // );
+  const routesMap = [
+    { path: '/desserts', label: 'Desserts' },
+    { path: '/bakings', label: 'Bakings' },
+  ];
+  const location = useLocation()
+  const title = routesMap.find((route) => location.pathname.includes(route.path))?.label || 'Home'
+  const productsCounter = useSelector(selectProducts);
   const totalProducts = Array.isArray(productsCounter)
-  ? productsCounter.reduce((sum, item) => sum + (item.amount || 0), 0)
-  : 0;
-  // const search = event => {
-  //   const value = event.target.value
-  //   dispatch(searchProducts(value))
-  // }
+    ? productsCounter.reduce((sum, item) => sum + (item.amount || 0), 0)
+    : 0;
   return (
     <Header>
-      <Title>Desserts</Title>
-      {/* <SearchForm>
-        <SearchInput type='text' placeholder='Search' onChange={search}/>
-      </SearchForm> */}
+      <Title>{title}</Title>
       <OpenModal onClick={open} $count={totalProducts}>
         <BtnSvg>
           <use href={`${icons}#icon-icon-add-to-cart`} />

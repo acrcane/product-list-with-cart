@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct } from '../../redux/productReducer';
 import {
@@ -24,13 +24,26 @@ import {
   RemoveIcon,
 } from './Modal.styled';
 import icons from '../../icons/symbol-defs.svg';
+import { selectProducts } from '../../redux/selectors';
 
 export const Modal = ({ close }) => {
-  const products = useSelector(store => store.productsList.products);
+
+  const products = useSelector(selectProducts);
   const dispatch = useDispatch();
   const handleRemove = productId => {
     dispatch(removeProduct({ id: productId }));
   };
+  useEffect(() => {
+    const handleEsc = e => {
+      if (e.key === 'Escape') {
+        close();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [close]);
   return (
     <ModalBackground>
       <ModalContainer>

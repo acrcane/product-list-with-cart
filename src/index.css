@@ -6,10 +6,12 @@
 
   body {
     margin: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Red Hat Text';
     margin: unset;
+    background-color: hsl(40, 80%, 90%);
   }
   button{cursor: pointer;}
   button,
@@ -36,11 +38,16 @@ code {
     monospace;
 }
 :root{
-  --main-red: hsl(14, 86%, 42%);
+  --main-red: hsl(0, 69%, 46%);
   --main-green: hsl(160, 47%, 70%);
   --main-gray: hsl(0, 0%, 55%);
   --main-rose: hsl(354, 49%, 53%);
+  /* --main-rose: #FAE5D3; */
   --main-text: rgb(37, 20, 14);
-  --main-theme: hsl(354, 35%, 89%);
+  --main-title: #faecd1;
+  /* --main-theme: hsl(354, 35%, 89%); */
+  /* --main-theme: #FFF5E1; */
+  --main-theme: hsl(40, 80%, 90%);
   --main-white: hsl(0, 0%, 100%);
 }
+

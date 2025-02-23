@@ -46,25 +46,10 @@ export const BtnSvg = styled.svg`
   height: 100%;
   fill: var(--main-rose); 
   transform: scale(2);
+  @media only screen and (min-width: 1400px){
+    transform: scale(1);
+}
 `;
-export const SearchForm = styled.form`
-width: 200px;
-height: 40px;
-background-color: transparent;
-`
-export const SearchInput = styled.input`
-width: 150px;
-height: 40px;
-outline: none;
-border: none;
-border-radius: 15px;
-background-color: var(--main-white);
-`
-export const SearchBtn = styled.button`
-width: 50px;
-height: 40px;
-outline: none;
-border: none;
-border-radius: 15px;
-background-color: var(--main-blue);
-`
+
+
+

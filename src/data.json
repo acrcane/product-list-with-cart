@@ -9,7 +9,8 @@
     },
     "name": "Waffle with Berries",
     "category": "Waffle",
-    "price": 6.5
+    "price": 6.5,
+    "type": "desert"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     },
     "name": "Vanilla Bean Crème Brûlée",
     "category": "Crème Brûlée",
-    "price": 7.0
+    "price": 7.0,
+    "type": "desert"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     },
     "name": "Macaron Mix of Five",
     "category": "Macaron",
-    "price": 8.0
+    "price": 8.0,
+    "type": "desert"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     },
     "name": "Classic Tiramisu",
     "category": "Tiramisu",
-    "price": 5.5
+    "price": 5.5,
+    "type": "desert"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     },
     "name": "Pistachio Baklava",
     "category": "Baklava",
-    "price": 4.0
+    "price": 4.0,
+    "type": "desert"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     },
     "name": "Lemon Meringue Pie",
     "category": "Pie",
-    "price": 5.0
+    "price": 5.0,
+    "type": "desert"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     },
     "name": "Red Velvet Cake",
     "category": "Cake",
-    "price": 4.5
+    "price": 4.5,
+    "type": "desert"
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     },
     "name": "Salted Caramel Brownie",
     "category": "Brownie",
-    "price": 4.5
+    "price": 4.5,
+    "type": "desert"
   },
   {
     "id": 9,
@@ -105,7 +113,125 @@
     },
     "name": "Vanilla Panna Cotta",
     "category": "Panna Cotta",
-    "price": 6.5
+    "price": 6.5,
+    "type": "desert"
+  },
+  {
+    "id": 10,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-croissant-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-croissant-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-croissant-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-croissant-desktop.jpg"
+    },
+    "name": "Butter Croissant",
+    "category": "Croissant",
+    "price": 3.0,
+    "type": "baking"
+  },
+  {
+    "id": 11,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-cinnamon-roll-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-cinnamon-roll-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-cinnamon-roll-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-cinnamon-roll-desktop.jpg"
+    },
+    "name": "Cinnamon Roll",
+    "category": "Roll",
+    "price": 4.0,
+    "type": "baking"
+  },
+  {
+    "id": 12,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-baguette-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-baguette-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-baguette-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-baguette-desktop.jpg"
+    },
+    "name": "French Baguette",
+    "category": "Bread",
+    "price": 2.5,
+    "type": "baking"
+  },
+  {
+    "id": 13,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-sourdough-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-sourdough-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-sourdough-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-sourdough-desktop.jpg"
+    },
+    "name": "Sourdough Loaf",
+    "category": "Bread",
+    "price": 5.0,
+    "type": "baking"
+  },
+  {
+    "id": 14,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-rye-bread-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-rye-bread-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-rye-bread-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-rye-bread-desktop.jpg"
+    },
+    "name": "Rye Bread",
+    "category": "Bread",
+    "price": 4.0,
+    "type": "baking"
+  },
+  {
+    "id": 15,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-pretzel-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-pretzel-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-pretzel-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-pretzel-desktop.jpg"
+    },
+    "name": "Soft Pretzel",
+    "category": "Pretzel",
+    "price": 3.0,
+    "type": "baking"
+  },
+  {
+    "id": 16,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-brioche-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-brioche-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-brioche-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-brioche-desktop.jpg"
+    },
+    "name": "Brioche Bun",
+    "category": "Brioche",
+    "price": 3.5,
+    "type": "baking"
+  },
+  {
+    "id": 17,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-bagel-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-bagel-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-bagel-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-bagel-desktop.jpg"
+    },
+    "name": "Sesame Bagel",
+    "category": "Bagel",
+    "price": 2.5,
+    "type": "baking"
+  },
+  {
+    "id": 18,
+    "image": {
+      "thumbnail": "/product-list-with-cart/assets/images/image-ciabatta-thumbnail.jpg",
+      "mobile": "/product-list-with-cart/assets/images/image-ciabatta-mobile.jpg",
+      "tablet": "/product-list-with-cart/assets/images/image-ciabatta-tablet.jpg",
+      "desktop": "/product-list-with-cart/assets/images/image-ciabatta-desktop.jpg"
+    },
+    "name": "Ciabatta Loaf",
+    "category": "Bread",
+    "price": 4.5,
+    "type": "baking"
   }
 ]
 

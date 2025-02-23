@@ -1,10 +1,12 @@
-import { useState } from 'react';
-import { Modal } from '../Modal/Modal';
+import { lazy, Suspense, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Oval } from 'react-loader-spinner';
+import { Modal } from '../index';
+import { HeaderCompnent } from '../index';
+import { FooterComponent } from '../index';
 import { Wrapper } from './App.styled';
-import { HeaderCompnent } from '../Header/Header';
-import { ProductList } from 'components/List/ProductList';
-import { FooterComponent } from 'components/Footer/Footer';
-// import { Test } from "../../Test";
+
+const Home = lazy(() => import('../../pages/HomePage/HomePage'));
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +18,26 @@ export const App = () => {
   };
   return (
     <Wrapper>
-      <HeaderCompnent open={handleOpen} />
-      {isOpen && <Modal close={handleClose} />}
-      <ProductList />
-      <FooterComponent />
+      <Suspense
+        fallback={
+          <Oval
+            visible={true}
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="oval-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          ></Oval>
+        }
+      >
+        <HeaderCompnent open={handleOpen} />
+        {isOpen && <Modal close={handleClose} />}
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
+        <FooterComponent />
+      </Suspense>
     </Wrapper>
   );
 };

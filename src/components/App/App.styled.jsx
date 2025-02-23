@@ -5,7 +5,7 @@ display: flex;
 flex-direction: column;
 width: 100%;
 min-height: 100vh;
-background-color: var(--main-theme);
+/* background-color: #fff; */
 @media only screen and (min-width: 1440px) {
     justify-content: center;
     align-items: center;

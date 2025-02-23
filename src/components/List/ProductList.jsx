@@ -23,9 +23,11 @@ import {
 } from './ProductList.styled';
 import data from '../../data.json';
 import icons from '../../icons/symbol-defs.svg'
+import { selectProducts } from '../../redux/selectors';
 
 export const ProductList = () => {
-  const storeProducts = useSelector(store => store.productsList.products);
+  const storeProducts = useSelector(selectProducts);
+  
   const dispatch = useDispatch();
   const addProdutcToCart = product => {
     dispatch(addProduct(product));
@@ -38,7 +40,7 @@ export const ProductList = () => {
   };
   return (
     <List>
-      {data.map((d, i) => {
+      {data.filter((desert) => desert.type === 'desert').map((d, i) => {
         const productCart = storeProducts.find(product => d.id === product.id);
         return (
           <ListItem key={i}>
