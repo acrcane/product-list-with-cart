@@ -1,5 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import bg from '../../images/bg/bg-main.webp';
+
+const appearing = keyframes`
+0% {opacity: 0;}
+100%{opacity: 1;}
+`
+
 export const Section = styled.section`
   margin-top: 0;
   width: 100%;
@@ -31,6 +37,7 @@ export const HeroTitle = styled.h1`
   padding: 0.5em 1em;
   z-index: 1;
   border-radius: 5px;
+  animation: ${appearing} 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) 0.5s both;
   @media only screen and (min-width: 768px) {
     letter-spacing: 1px;
   }

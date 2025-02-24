@@ -16,7 +16,7 @@ export const CategorySection = () => {
       <ShopContainer>
         <ShopInfoContainer>
           <ShopTitle>Order baking</ShopTitle>
-          <ShopBtn>Order</ShopBtn>
+          <ShopBtn to={'/baking'}>Order</ShopBtn>
         </ShopInfoContainer>
         <ShopImg src={ciabattaImg}/>
       </ShopContainer>
@@ -24,7 +24,7 @@ export const CategorySection = () => {
         <ShopImg src={tiramisuImg}/>
         <ShopInfoContainer>
           <ShopTitle>Order desserts</ShopTitle>
-          <ShopBtn>Order</ShopBtn>
+          <ShopBtn to={'/desserts'}>Order</ShopBtn>
         </ShopInfoContainer>
       </ShopContainer>
     </Section>

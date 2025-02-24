@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-
+import { NavLink } from "react-router-dom";
 
 const slideTop = keyframes`
 0% {
@@ -56,7 +56,10 @@ font-size: 1.7em;
 font-weight: 600;
 `
 
-export const ShopBtn = styled.button`
+export const ShopBtn = styled(NavLink)`
+display: flex;
+justify-content: center;
+align-items: center;
 width: 170px;
 height: 60px;
 border-radius: 50px;
@@ -66,6 +69,7 @@ background: transparent;
 color: var(--main-text);
 font-size: 22px;
 transition: 0.4s ease-in-out;
+text-decoration: none;
 &:hover, :focus{
     color: var(--main-white);
     background-color: var(--main-rose);

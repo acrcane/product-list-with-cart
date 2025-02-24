@@ -25,7 +25,7 @@ import data from '../../data.json';
 import icons from '../../icons/symbol-defs.svg'
 import { selectProducts } from '../../redux/selectors';
 
-export const ProductList = () => {
+export const DessertsList = () => {
   const storeProducts = useSelector(selectProducts);
   
   const dispatch = useDispatch();
@@ -38,9 +38,10 @@ export const ProductList = () => {
   const handleIncrement = productId => {
     dispatch(incrementProduct({ id: productId }));
   };
+
   return (
     <List>
-      {data.filter((desert) => desert.type === 'desert').map((d, i) => {
+      {data.filter((d) => d.type === 'desert').map((d, i) => {
         const productCart = storeProducts.find(product => d.id === product.id);
         return (
           <ListItem key={i}>

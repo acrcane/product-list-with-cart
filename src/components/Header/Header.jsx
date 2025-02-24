@@ -9,7 +9,7 @@ import { selectProducts } from '../../redux/selectors';
 export const HeaderCompnent = ({ open }) => {
   const routesMap = [
     { path: '/desserts', label: 'Desserts' },
-    { path: '/bakings', label: 'Bakings' },
+    { path: '/baking', label: 'Baking' },
   ];
   const location = useLocation()
   const title = routesMap.find((route) => location.pathname.includes(route.path))?.label || 'Home'

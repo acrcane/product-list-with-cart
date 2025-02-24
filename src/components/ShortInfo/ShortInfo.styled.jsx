@@ -8,13 +8,13 @@ background-repeat: no-repeat;
 background-size: 100%;
 display: flex;
 flex-wrap: wrap;
-justify-content: center;
+justify-content: space-around;
 align-items: center;
 `
 
 export const Container = styled.div`
 background-color: transparent;
-width: 200px;
+width: 150px;
 display: flex;
 flex-direction: column;
 justify-content: center;
