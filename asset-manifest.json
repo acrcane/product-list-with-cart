@@ -1,8 +1,10 @@
 {
   "files": {
     "main.css": "/product-list-with-cart/static/css/main.d3ab8b59.css",
-    "main.js": "/product-list-with-cart/static/js/main.c10e9beb.js",
-    "static/js/812.c4785e36.chunk.js": "/product-list-with-cart/static/js/812.c4785e36.chunk.js",
+    "main.js": "/product-list-with-cart/static/js/main.7fc68c6d.js",
+    "static/js/812.d08a0e4f.chunk.js": "/product-list-with-cart/static/js/812.d08a0e4f.chunk.js",
+    "static/js/18.b414cceb.chunk.js": "/product-list-with-cart/static/js/18.b414cceb.chunk.js",
+    "static/js/172.a09daf23.chunk.js": "/product-list-with-cart/static/js/172.a09daf23.chunk.js",
     "static/media/notebook-paper-background.jpg": "/product-list-with-cart/static/media/notebook-paper-background.4505368ef18f028ece67.jpg",
     "static/media/ciabatta.jpg": "/product-list-with-cart/static/media/ciabatta.5f638bcc9c401b6d7a6e.jpg",
     "static/media/tiramisu.jpg": "/product-list-with-cart/static/media/tiramisu.bb4372d5e19f2652f1af.jpg",
@@ -10,11 +12,13 @@
     "static/media/symbol-defs.svg": "/product-list-with-cart/static/media/symbol-defs.7ee8f4fa625f56ce826d6a9d8ef35797.svg",
     "index.html": "/product-list-with-cart/index.html",
     "main.d3ab8b59.css.map": "/product-list-with-cart/static/css/main.d3ab8b59.css.map",
-    "main.c10e9beb.js.map": "/product-list-with-cart/static/js/main.c10e9beb.js.map",
-    "812.c4785e36.chunk.js.map": "/product-list-with-cart/static/js/812.c4785e36.chunk.js.map"
+    "main.7fc68c6d.js.map": "/product-list-with-cart/static/js/main.7fc68c6d.js.map",
+    "812.d08a0e4f.chunk.js.map": "/product-list-with-cart/static/js/812.d08a0e4f.chunk.js.map",
+    "18.b414cceb.chunk.js.map": "/product-list-with-cart/static/js/18.b414cceb.chunk.js.map",
+    "172.a09daf23.chunk.js.map": "/product-list-with-cart/static/js/172.a09daf23.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d3ab8b59.css",
-    "static/js/main.c10e9beb.js"
+    "static/js/main.7fc68c6d.js"
   ]
 }
