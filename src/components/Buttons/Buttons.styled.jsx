@@ -58,3 +58,33 @@ outline: none;
     transform: translate(-50%, 0%);
 }
 `
+
+//==========================================AMOUNt BUTTON====================================================
+
+export const AmounBtn = styled.button`
+width: 50px;
+height: 50px;
+border-radius: 50%;
+outline: none;
+border: 1px solid var(--main-white);
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: transparent;
+transition: 0.3s ease-in-out;
+&:hover, &:focus {
+    /* border: 1px solid var(--main-rose); */
+    background-color: var(--main-white);
+}`
+
+export const IconAmount = styled.svg`
+width: 32px;
+height: 32px;
+fill: var(--main-white);
+transition: 0.3s ease-in-out;
+
+${AmounBtn}:hover &,
+${AmounBtn}:focus & {
+    fill: var(--main-rose);
+}
+`

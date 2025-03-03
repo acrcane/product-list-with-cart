@@ -7,8 +7,7 @@ import { FooterComponent } from '../index';
 import { Wrapper } from './App.styled';
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage'));
-const Desserts = lazy(() => import('../../pages/Products/DessertsPage'))
-const Baking = lazy(() => import('../../pages/Products/BakingPage'))
+const ProductsPage = lazy(() => import('../../pages/ProductsPage/ProductsPage'))
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +36,8 @@ export const App = () => {
         {isOpen && <Modal close={handleClose} />}
         <Routes>
           <Route index element={<Home />} />
-          <Route path='/desserts' element={<Desserts />} />
-          <Route path='/baking' element={<Baking />}/>
+          <Route path='/products' element={<ProductsPage />} />
+          <Route path='/products/:type' element={<ProductsPage />} />
         </Routes>
         <FooterComponent />
       </Suspense>

@@ -10,13 +10,12 @@ export const ModalBackground = styled.div`
   z-index: 10;
   top: 0%;
   right: 0%;
-  left: 0%; 
+  left: 0%;
   bottom: 0%;
-  @media only screen and (min-width: 768px){
+  @media only screen and (min-width: 768px) {
     justify-content: center;
     align-items: center;
-
-}
+  }
 `;
 export const ModalContainer = styled.div`
   width: 100%;
@@ -26,13 +25,13 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px 10px 10px 10px;
-  background-color: #fff;
-  @media only screen and (min-width: 768px){
+  background-color: var(--main-white);
+  @media only screen and (min-width: 768px) {
     width: 800px;
-    height: 920px;
+    height: 600px;
     border-radius: 25px;
     padding: 35px 30px 10px 30px;
-}
+  }
 `;
 export const TopContainer = styled.div`
   display: flex;
@@ -45,6 +44,9 @@ export const Title = styled.h3`
   color: var(--main-text);
 `;
 export const CloseBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 35px;
   height: 35px;
   border: 1px solid var(--main-red);
@@ -52,10 +54,10 @@ export const CloseBtn = styled.button`
   outline: none;
   border-radius: 50%;
   background-color: transparent;
-  @media only screen and (min-width: 768px){
-    width: 70px;
-    height: 70px;
-}
+  @media only screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 export const List = styled.ul`
   padding: 0;
@@ -75,26 +77,26 @@ export const ListItem = styled.li`
   border-radius: 10px;
   background-color: var(--main-white);
   padding: 10px 20px;
-  @media only screen and (min-width: 768px){
+  @media only screen and (min-width: 768px) {
     height: 200px;
-}
+  }
 `;
 export const ImgContainer = styled.div`
   width: 42%;
   height: 100%;
   background-color: #000;
 `;
-export const OrderPicture = styled.picture`width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
+export const OrderPicture = styled.picture`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 `;
 export const OrderImage = styled.img`
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 `;
 export const OrderInfoContainer = styled.div`
   width: 38%;
@@ -113,12 +115,11 @@ export const Price = styled.span`
   color: var(--main-text);
 `;
 export const TotalPrice = styled.span`
-width: 15%;
-text-align: center;
-@media only screen and (min-width: 768px){
-font-size: 2em;
-}
-
+  width: 15%;
+  text-align: center;
+  @media only screen and (min-width: 768px) {
+    font-size: 2em;
+  }
 `;
 export const OrderBtn = styled.button`
   height: 50px;
@@ -129,49 +130,53 @@ export const OrderBtn = styled.button`
   outline: none;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   transition: 0.2s ease-in-out;
-  &:hover{
-    background-color: ${props => (props.disabled ? '#ccc' : "var(--main-white)")};
+  &:hover {
+    background-color: ${props =>
+      props.disabled ? '#ccc' : 'var(--main-white)'};
     color: ${props => (props.disabled ? '#ccc' : 'var(--main-rose)')};
   }
   @media only screen and (min-width: 768px) {
     height: 80px;
     font-size: 1.5em;
     border-radius: 45px;
-}
-`
+  }
+`;
 
 export const EmptyIcon = styled.svg`
   width: 100%;
   height: 100%;
-`
+`;
 
 export const RemoveBtnContainer = styled.div`
-width: 5%;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: start;
-`
+  width: 5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+`;
 
 export const RemoveBtn = styled.button`
-width: 35px;
-height: 35px;
-border: 1px solid var(--main-rose);
-border-radius: 50%;
-outline: none;
-background-color: transparent;
-@media only screen and (min-width: 768px){
-width: 50px;
-height: 50px;
-}
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--main-rose);
+  border-radius: 50%;
+  outline: none;
+  background-color: transparent;
+  @media only screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+`;
 export const RemoveIcon = styled.svg`
-width: 100%;
-height: 100%;
-fill: var(--main-rose);
-stroke: var(--main-rose);
-transform: scale(15);
-@media only screen and (min-width: 768px){
-  transform: scale(1)
-}
-`
+  width: 50%;
+  height: 50%;
+  fill: var(--main-rose);
+  stroke: var(--main-rose);
+
+  @media only screen and (min-width: 768px) {
+    transform: scale(1);
+  }
+`;

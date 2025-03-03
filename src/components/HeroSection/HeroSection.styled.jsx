@@ -24,6 +24,13 @@ export const Section = styled.section`
     bottom: 0%;
     background: rgba(0, 0, 0, 0.4);
   }
+  @media only screen and (min-width: 768px) {
+    height: 800px;
+    /* height: calc(100vh - 80px); */
+  }
+  @media only screen and (min-width: 1400px) {
+    height: calc(100vh - 80px);
+  }
 `;
 export const HeroTitle = styled.h1`
   font-size: 3em;
@@ -33,15 +40,18 @@ export const HeroTitle = styled.h1`
   color: var(--main-title);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   padding: 0.5em 1em;
   z-index: 1;
   border-radius: 5px;
   animation: ${appearing} 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) 0.5s both;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-width: 767px) {
     letter-spacing: 1px;
   }
   @media only screen and (min-width: 768px) {
     letter-spacing: 1.5px;
+  }
+  @media only screen and (min-width: 1400px) {
+    letter-spacing: 1.9px;
   }
 `;

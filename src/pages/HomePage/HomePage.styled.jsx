@@ -12,7 +12,7 @@ background-color: #fff;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 80px;
+    /* gap: 80px; */
 }
 @media only screen and (min-width: 1440px){
     max-width: 1440px;
