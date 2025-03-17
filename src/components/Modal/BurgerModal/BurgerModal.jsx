@@ -8,24 +8,30 @@ import {
 } from 'components/Header/Header.styled';
 import { ModalBackground } from '../BurgerModal/ModalBackground';
 
-export const BurgerModal = ({ setIsOpen }) => {
+export const BurgerModal = ({isOpen, setIsOpen }) => {
 
     const [showContent, setShowContent] = useState(false)
 
     useEffect(() => {
-        setShowContent(true)
-    }, [])
+      setShowContent(isOpen);
+  }, [isOpen]);
+  
 
   const handleClose = () => {
-    setIsOpen(false);
+    // setIsOpen(false);
+    setShowContent(false)
+    setTimeout(() => {
+      setIsOpen(false)
+    }, 500)
   };
 
   return (
     <>
     
-      <ModalBackground handleClose={handleClose} />
+    {isOpen && <ModalBackground handleClose={handleClose} />}
 
-      <MobileMenu>
+
+      <MobileMenu show={showContent}>
         <CloseBtn show={showContent} onClick={() => handleClose()}>X</CloseBtn>
         <Nav>
           <NavList>

@@ -1,7 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from '@xstyled/styled-components';
+const slideIn = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
 
-
-
+const slideOut = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
 
 
 export const ModalBG = styled.div`
@@ -10,32 +24,28 @@ top: 0%;
 left: 0%;
 width: 100%;
 height: 100vh;
-background-color: #000000a8;
+background-color: #000000ee;
 z-index: 1;
-transform: translateX(-100%);
   transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  ${({show}) => show && 
-  `transform: translateX(0);
-
-  `}
+  display: ${({ show }) => (show ? 'block' : 'none')};
+  transition: opacity 0.3s ease-in-out;
 `
 
 export const MobileMenu = styled.div`
+
   position: absolute;
+  top: 0%;
+  left: 0%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  height: 500px;
+  width: 100%;
+  height: 100vh;
   background-color: var(--main-green);
-  /* transform: translateX(-100%);
-  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  ${({show}) => show && 
-  `transform: translateX(0);
+  animation: ${({ show }) => (show ? slideIn : slideOut)} 0.5s ease-in-out forwards;
 
-  `} */
 `;
 
 export const CloseBtn = styled.button`

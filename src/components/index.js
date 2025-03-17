@@ -5,4 +5,5 @@ export { CategorySection } from '../components/CategorySection/CategorySection';
 export { ShortInfo } from '../components/ShortInfo/ShortInfo';
 export { ProductCart } from '../components/Cart/ProductCart';
 export { ProductsList } from '../components/List/ProductsList';
+export { SignInForm } from '../components/Forms/SignInForm'
 export { FooterComponent } from '../components/Footer/Footer';

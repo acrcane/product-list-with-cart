@@ -1,26 +1,6 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const slideRight = keyframes`
- 0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-`;
-const slideLeft = keyframes`
- 0% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-`;
 
 export const Header = styled.header`
   width: 100%;
@@ -44,11 +24,7 @@ export const MobileMenu = styled.div`
   width: 100%;
   height: 100vh;
   background-color: var(--main-green);
-  /* transition: visibility 0.7s, opacity 0.7s ease-in-out;
-  ${({ $isOpen }) =>
-    $isOpen
-      ? css `animation: ${slideRight} 0.7s ease-in-out both; visibility: visible; opacity: 1; `
-      : css `animation: ${slideLeft} 0.7s ease-in-out both; visibility: visible; opacity: 1; `} */
+
   z-index: 12;
 `;
 export const CloseBtn = styled.button`

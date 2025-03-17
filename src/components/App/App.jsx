@@ -5,9 +5,12 @@ import { Modal } from '../index';
 import { HeaderCompnent } from '../index';
 import { FooterComponent } from '../index';
 import { Wrapper } from './App.styled';
+// import {capitalizeWords} from '../../task'
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage'));
 const ProductsPage = lazy(() => import('../../pages/ProductsPage/ProductsPage'))
+const RegistrationPage = lazy(() => import('../../pages/AuthPages/RegistrationPage'))
+const SignInPage = lazy(() => import('../../pages/AuthPages/SignInPage'))
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +20,7 @@ export const App = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
+  // capitalizeWords("javaScript is awesome")
   return (
     <Wrapper>
       <Suspense
@@ -38,6 +42,8 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path='/products' element={<ProductsPage />} />
           <Route path='/products/:type' element={<ProductsPage />} />
+          <Route path='/registration' element={<RegistrationPage />} />
+          <Route path='/signin' element={<SignInPage />} />
         </Routes>
         <FooterComponent />
       </Suspense>

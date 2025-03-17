@@ -18,6 +18,8 @@ export const ModalBackground = styled.div`
   }
 `;
 export const ModalContainer = styled.div`
+position: relative;
+bottom: 10%;
   width: 100%;
   height: 90%;
   border-top-right-radius: 20px;
@@ -28,7 +30,15 @@ export const ModalContainer = styled.div`
   background-color: var(--main-white);
   @media only screen and (min-width: 768px) {
     width: 800px;
+    height: 900px;
+    bottom: 0%;
+    border-radius: 25px;
+    padding: 35px 30px 10px 30px;
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 800px;
     height: 600px;
+    bottom: 0%;
     border-radius: 25px;
     padding: 35px 30px 10px 30px;
   }
@@ -69,6 +79,9 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media only screen and (min-width: 1280px) {
+    /* height: 600px; */
+  }
 `;
 export const ListItem = styled.li`
   display: flex;
@@ -78,13 +91,19 @@ export const ListItem = styled.li`
   background-color: var(--main-white);
   padding: 10px 20px;
   @media only screen and (min-width: 768px) {
-    height: 200px;
+    height: 185px;
+  }
+  @media only screen and (min-width: 1280px) {
+    height: 100px;
   }
 `;
 export const ImgContainer = styled.div`
   width: 42%;
   height: 100%;
   background-color: #000;
+  @media only screen and (min-width: 1280px) {
+    width: 100px;
+  }
 `;
 export const OrderPicture = styled.picture`
   width: 100%;
@@ -136,6 +155,7 @@ export const OrderBtn = styled.button`
     color: ${props => (props.disabled ? '#ccc' : 'var(--main-rose)')};
   }
   @media only screen and (min-width: 768px) {
+    margin-top: 30px;
     height: 80px;
     font-size: 1.5em;
     border-radius: 45px;

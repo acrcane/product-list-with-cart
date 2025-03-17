@@ -7,7 +7,6 @@ import { App } from './components/App/App';
 import './index.css';
 import { persistor, store } from './redux/store';
 // import { AppTest } from 'components/App/AppTest';
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <PersistGate persistor={persistor} loading={null}>

@@ -7,7 +7,6 @@ import {
   Logo,
   OpenModal,
   BtnSvg,
-
   Nav,
   NavList,
   NavListElem,
@@ -27,7 +26,7 @@ export const HeaderCompnent = ({ open }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1440);
+      setIsMobile(window.innerWidth < 1280);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -37,6 +36,8 @@ export const HeaderCompnent = ({ open }) => {
     { path: '/desserts', label: 'Desserts' },
     { path: '/baking', label: 'Baking' },
     { path: '/products', label: 'All products' },
+    { path: '/registration', label: 'Registration' },
+    { path: '/signin', label: 'Sign In' },
   ];
 
   const title =
@@ -56,7 +57,7 @@ export const HeaderCompnent = ({ open }) => {
       <LogoContainer>
       <Logo to="/">{title}</Logo>
       </LogoContainer>
-      
+      <NavListLink to='/signin'>Ac</NavListLink>
       <OpenModal onClick={open} $count={totalProducts}>
         <BtnSvg>
           <use href={`${icons}#icon-icon-add-to-cart`} />
@@ -64,7 +65,9 @@ export const HeaderCompnent = ({ open }) => {
       </OpenModal>
       {isOpen && (
         <BurgerModal isOpen={isOpen} setIsOpen={setIsOpen} handleClose={handleClose}/>
+        
       )}
+      {/* <BurgerModal isOpen={isOpen} setIsOpen={setIsOpen} handleClose={handleClose}/> */}
       {isMobile ? (
         <BurgerBtn onClick={() => setIsOpen(!isOpen)}>
           <BtnSvg>
