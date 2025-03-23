@@ -76,14 +76,12 @@ export const OpenModal = styled.button`
   }
 `;
 export const BtnSvg = styled.svg`
-  /* display: block; */
   width: 100%;
   height: 100%;
   fill: var(--main-rose);
-  /* transform: scale(2); */
-  @media only screen and (min-width: 1400px) {
+  /* @media only screen and (min-width: 1400px) {
     transform: scale(1);
-  }
+  } */
 `;
 
 export const Nav = styled.nav``;

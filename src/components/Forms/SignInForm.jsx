@@ -1,9 +1,24 @@
 import React from 'react'
 import { Form, Input, Label, Title, Button,ToRegLink } from './Forms.styled'
+import { useDispatch } from 'react-redux'
+import { apiLoginUser } from '../../redux/auth/authSlice'
 
 export const SignInForm = () => {
+  const dispatch = useDispatch()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const email = formData.get('email')
+    const password = formData.get('password')
+    const data = {
+      email,
+      password
+    }
+  dispatch(apiLoginUser(data))
+  e.currentTarget.reset()
+  }
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
         <Title>Sign In</Title>
         <Label htmlFor='email'>
             <Input type='email' name='email' id='email' placeholder='Enter email'/>

@@ -7,22 +7,21 @@ import {
   Logo,
   OpenModal,
   BtnSvg,
-  Nav,
-  NavList,
-  NavListElem,
   NavListLink,
   BurgerBtn,
-
-  LogoContainer
+  LogoContainer,
 } from './Header.styled';
 import icons from '../../icons/symbol-defs.svg';
 import { BurgerModal } from 'components/Modal/BurgerModal/BurgerModal';
+import { Navigation, UserMenu } from 'components';
+import { selectAuthIsLoggedIn } from '../../redux/auth/authSlice.selectors';
 
 export const HeaderCompnent = ({ open }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1400);
   const location = useLocation();
   const productsCounter = useSelector(selectProducts);
+  const isLoggedIn = useSelector(selectAuthIsLoggedIn)
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,22 +51,28 @@ export const HeaderCompnent = ({ open }) => {
     setIsOpen(false);
   };
 
+
   return (
     <Header>
       <LogoContainer>
-      <Logo to="/">{title}</Logo>
+        <Logo to="/">{title}</Logo>
       </LogoContainer>
-      <NavListLink to='/signin'>Ac</NavListLink>
-      <OpenModal onClick={open} $count={totalProducts}>
+      {isLoggedIn ? (
+        <>
+        <UserMenu />
+        <OpenModal onClick={open} $count={totalProducts}>
         <BtnSvg>
           <use href={`${icons}#icon-icon-add-to-cart`} />
         </BtnSvg>
-      </OpenModal>
+      </OpenModal></>
+      ) : (<NavListLink to="/signin">Ac</NavListLink>)}
       {isOpen && (
-        <BurgerModal isOpen={isOpen} setIsOpen={setIsOpen} handleClose={handleClose}/>
-        
+        <BurgerModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          handleClose={handleClose}
+        />
       )}
-      {/* <BurgerModal isOpen={isOpen} setIsOpen={setIsOpen} handleClose={handleClose}/> */}
       {isMobile ? (
         <BurgerBtn onClick={() => setIsOpen(!isOpen)}>
           <BtnSvg>
@@ -75,31 +80,7 @@ export const HeaderCompnent = ({ open }) => {
           </BtnSvg>
         </BurgerBtn>
       ) : (
-        <Nav>
-          <NavList>
-            <NavListElem>
-              <NavListLink to="/products" onClick={() => setIsOpen(false)}>
-                TEst
-              </NavListLink>
-            </NavListElem>
-            <NavListElem>
-              <NavListLink
-                to="/products/desserts"
-                onClick={() => setIsOpen(false)}
-              >
-                Test Des
-              </NavListLink>
-            </NavListElem>
-            <NavListElem>
-              <NavListLink
-                to="/products/baking"
-                onClick={() => setIsOpen(false)}
-              >
-                Test Bak
-              </NavListLink>
-            </NavListElem>
-          </NavList>
-        </Nav>
+        <Navigation handleClose={handleClose} />
       )}
     </Header>
   );

@@ -1,26 +1,38 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { apiRefreshUser } from '../../redux/auth/authSlice';
 import { Oval } from 'react-loader-spinner';
 import { Modal } from '../index';
 import { HeaderCompnent } from '../index';
 import { FooterComponent } from '../index';
 import { Wrapper } from './App.styled';
-// import {capitalizeWords} from '../../task'
+import { RestrictedRoute } from '../index';
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage'));
-const ProductsPage = lazy(() => import('../../pages/ProductsPage/ProductsPage'))
-const RegistrationPage = lazy(() => import('../../pages/AuthPages/RegistrationPage'))
-const SignInPage = lazy(() => import('../../pages/AuthPages/SignInPage'))
+const ProductsPage = lazy(() =>
+  import('../../pages/ProductsPage/ProductsPage')
+);
+const RegistrationPage = lazy(() =>
+  import('../../pages/AuthPages/RegistrationPage')
+);
+const SignInPage = lazy(() => import('../../pages/AuthPages/SignInPage'));
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(apiRefreshUser());
+  }, [dispatch]);
   const handleOpen = () => {
     setIsOpen(true);
   };
+
   const handleClose = () => {
     setIsOpen(false);
   };
-  // capitalizeWords("javaScript is awesome")
+
   return (
     <Wrapper>
       <Suspense
@@ -40,10 +52,24 @@ export const App = () => {
         {isOpen && <Modal close={handleClose} />}
         <Routes>
           <Route index element={<Home />} />
-          <Route path='/products' element={<ProductsPage />} />
-          <Route path='/products/:type' element={<ProductsPage />} />
-          <Route path='/registration' element={<RegistrationPage />} />
-          <Route path='/signin' element={<SignInPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:type" element={<ProductsPage />} />
+          <Route
+            path="/registration"
+            element={
+              <RestrictedRoute>
+                <RegistrationPage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <RestrictedRoute>
+                <SignInPage />
+              </RestrictedRoute>
+            }
+          />
         </Routes>
         <FooterComponent />
       </Suspense>
