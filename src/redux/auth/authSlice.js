@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const $authInstans = axios.create({
-  baseURL: 'https://connections-api.goit.global',
+  baseURL: 'http://localhost:3030',
 });
 
 const setToken = token => {
@@ -47,6 +47,7 @@ export const apiRefreshUser = createAsyncThunk(
     try {
       setToken(token);      
       const { data } = await $authInstans.get('/users/current');
+      console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
