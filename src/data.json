@@ -1,6 +1,5 @@
 [
   {
-    "id": 13,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-sourdough-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-sourdough-mobile.jpg",
@@ -13,7 +12,6 @@
     "type": "baking"
   },
   {
-    "id": 3,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-macaron-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-macaron-mobile.jpg",
@@ -26,7 +24,6 @@
     "type": "desserts"
   },
   {
-    "id": 15,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-pretzel-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-pretzel-mobile.jpg",
@@ -39,7 +36,6 @@
     "type": "baking"
   },
   {
-    "id": 7,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-cake-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-cake-mobile.jpg",
@@ -52,7 +48,6 @@
     "type": "desserts"
   },
   {
-    "id": 17,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-bagel-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-bagel-mobile.jpg",
@@ -65,7 +60,6 @@
     "type": "baking"
   },
   {
-    "id": 10,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-croissant-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-croissant-mobile.jpg",
@@ -78,7 +72,6 @@
     "type": "baking"
   },
   {
-    "id": 5,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-baklava-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-baklava-mobile.jpg",
@@ -91,7 +84,6 @@
     "type": "desserts"
   },
   {
-    "id": 12,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-baguette-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-baguette-mobile.jpg",
@@ -104,7 +96,6 @@
     "type": "baking"
   },
   {
-    "id": 8,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-brownie-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-brownie-mobile.jpg",
@@ -117,7 +108,6 @@
     "type": "desserts"
   },
   {
-    "id": 1,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-waffle-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-waffle-mobile.jpg",
@@ -130,7 +120,6 @@
     "type": "desserts"
   },
   {
-    "id": 6,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-meringue-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-meringue-mobile.jpg",
@@ -143,7 +132,6 @@
     "type": "desserts"
   },
   {
-    "id": 9,
     "image": {
       "thumbnail": "/product-list-with-cart/assets/images/image-panna-cotta-thumbnail.jpg",
       "mobile": "/product-list-with-cart/assets/images/image-panna-cotta-mobile.jpg",
@@ -156,5 +144,6 @@
     "type": "desserts"
   }
 ]
+
 
 
