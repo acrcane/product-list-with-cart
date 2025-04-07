@@ -47,7 +47,7 @@ export const apiRefreshUser = createAsyncThunk(
     try {
       setToken(token);      
       const { data } = await $authInstans.get('/users/current');
-      console.log(data);
+      
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

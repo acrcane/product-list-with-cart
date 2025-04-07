@@ -1,0 +1,1 @@
+export const selectProducts = store => store.productsCarts.products;

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeProduct } from '../../redux/productReducer';
 import {
   ModalBackground,
   ModalContainer,
@@ -24,15 +23,15 @@ import {
   RemoveIcon,
 } from './Modal.styled';
 import icons from '../../icons/symbol-defs.svg';
-import { selectProducts } from '../../redux/selectors';
+import { selectCartProducts } from '../../redux/cart/cart.selectors';
+import { removeProduct } from '../../redux/cart/cartSlice';
 
 export const Modal = ({ close }) => {
 
-  const products = useSelector(selectProducts);
+  const cartProducts= useSelector(selectCartProducts)
   const dispatch = useDispatch();
-  const handleRemove = productId => {
-    dispatch(removeProduct({ id: productId }));
-  };
+
+  
   useEffect(() => {
     const handleEsc = e => {
       if (e.key === 'Escape') {
@@ -44,6 +43,11 @@ export const Modal = ({ close }) => {
       window.removeEventListener('keydown', handleEsc);
     };
   }, [close]);
+
+  const handleRemove = productId => {
+    dispatch(removeProduct({ _id: productId }));
+  };
+
   return (
     <ModalBackground>
       <ModalContainer>
@@ -52,7 +56,7 @@ export const Modal = ({ close }) => {
           <CloseBtn onClick={close}><RemoveIcon><use href={`${icons}#icon-icon-remove-item`}/></RemoveIcon></CloseBtn>
         </TopContainer>
         <List>
-          {products.length === 0 ? (
+          {cartProducts.length === 0 ? (
             <>
               <h2 style={{ textAlign: 'center' }}>
                 Your shopping cart is empty
@@ -62,9 +66,10 @@ export const Modal = ({ close }) => {
               </EmptyIcon>
             </>
           ) : (
-            products.map((product, index) => {
+            cartProducts.map((product) => {              
+              // if(!cartProducts.image) return null
               return (
-                <ListItem key={index}>
+                <ListItem key={product._id}>
                   <ImgContainer>
                     <OrderPicture>
                       <source
@@ -91,7 +96,7 @@ export const Modal = ({ close }) => {
                     ${!product.total ? product.price : product.total}
                   </TotalPrice>
                   <RemoveBtnContainer>
-                  <RemoveBtn onClick={() => handleRemove(product.id)}>
+                  <RemoveBtn onClick={() => handleRemove(product._id)}>
                     <RemoveIcon><use href={`${icons}#icon-icon-remove-item`}/></RemoveIcon>
                   </RemoveBtn>
                   </RemoveBtnContainer>
@@ -100,7 +105,7 @@ export const Modal = ({ close }) => {
             })
           )}
         </List>
-        <OrderBtn disabled={products.length === 0}>Order</OrderBtn>
+        <OrderBtn disabled={cartProducts.length === 0}>Order</OrderBtn>
       </ModalContainer>
     </ModalBackground>
   );
