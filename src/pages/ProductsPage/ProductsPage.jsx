@@ -3,20 +3,33 @@ import { useParams } from 'react-router-dom';
 
 import { ProductsList } from 'components';
 import { Main } from './ProductsPage.styled';
-import data from '../../data.json';
+import { selectAllProducts } from '../../redux/products/products.selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { apiGetAllProducts } from '../../redux/products/operations';
 
 const ProductsPage = () => {
+  const productsListSel = useSelector(selectAllProducts);
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const { type } = useParams();
+  useEffect(() => {
+    dispatch(apiGetAllProducts());
+  }, [dispatch]);
 
   useEffect(() => {
-    if (type) {
-      const filteredProducts = data.filter(d => d.type === type);
-      setProducts(filteredProducts);
-    } else {
-      setProducts(data);
+    if (!productsListSel.length) {
+      setProducts([]);
+      return;
     }
-  }, [type]);
+    if (type) {
+      const productsList = productsListSel.filter(
+        d => d.type.trim().toLowerCase() === type.trim().toLowerCase()
+      );
+      setProducts(productsList);
+    } else {
+      setProducts(productsListSel);
+    }
+  }, [type, productsListSel]);
 
   return (
     <Main>

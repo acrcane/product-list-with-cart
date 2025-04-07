@@ -4,17 +4,20 @@ import { apiGetAllProducts, apiAddProductsToList, apiRemoveProductsFromList } fr
 const initialState = {
     isLoading: false,
     error: null,
-    products: []
+    productsData: [],    
 }
 
-const authSlice = createSlice({
+const productListSlice = createSlice({
     name: 'shopList',
     initialState,
 
     extraReducers: builder =>
       builder
         .addCase(apiGetAllProducts.fulfilled, (state, action) => {
-
+          state.isLoading = false;
+          state.productsData = action.payload;
+          // console.log(state.productsData.length > 0 ? state.productsData[0].type : "Дані ще не завантажені");
+          
         })
         .addCase(apiAddProductsToList.fulfilled, (state, action) => {
 
@@ -46,5 +49,5 @@ const authSlice = createSlice({
         ),
   });
   
-  export const authReducer = authSlice.reducer;
+  export const productListReducer = productListSlice.reducer;
   

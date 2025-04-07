@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { selectProducts } from '../../redux/selectors';
+import { apiGetAllProducts } from '../../redux/products/operations';
 import {
   Header,
   Logo,
@@ -15,12 +15,13 @@ import icons from '../../icons/symbol-defs.svg';
 import { BurgerModal } from 'components/Modal/BurgerModal/BurgerModal';
 import { Navigation, UserMenu } from 'components';
 import { selectAuthIsLoggedIn } from '../../redux/auth/authSlice.selectors';
+import { selectCartProducts } from '../../redux/cart/cart.selectors';
 
 export const HeaderCompnent = ({ open }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1400);
   const location = useLocation();
-  const productsCounter = useSelector(selectProducts);
+  const productsCounter = useSelector(selectCartProducts);
   const isLoggedIn = useSelector(selectAuthIsLoggedIn)
 
   useEffect(() => {

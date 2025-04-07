@@ -18,7 +18,7 @@ import {
 import icons from '../../icons/symbol-defs.svg';
 
 export const ProductCart = ({
-  productCart,
+  cart,
   d,
   addProdutcToCart,
   handleDecrement,
@@ -33,15 +33,15 @@ export const ProductCart = ({
           <source media="(min-width: 1440px)" srcSet={d.image.desktop} />
           <ImgHelper src={d.image.thumbnail} alt={d.name} />
         </Image>
-        {productCart ? (
+        {cart ? (
           <ButtonsContainer>
-            <AmounBtn onClick={() => handleDecrement(productCart.id)}>
+            <AmounBtn onClick={() => handleDecrement(cart._id)}>
               <IconAmount>
                 <use href={`${icons}#icon-icon-decrement-quantity`} />
               </IconAmount>
             </AmounBtn>
-            <AmoutSpan>{productCart.amount}</AmoutSpan>
-            <AmounBtn onClick={() => handleIncrement(productCart.id)}>
+            <AmoutSpan>{cart.amount}</AmoutSpan>
+            <AmounBtn onClick={() => handleIncrement(cart._id)}>
               <IconAmount>
                 <use href={`${icons}#icon-icon-increment-quantity`} />
               </IconAmount>

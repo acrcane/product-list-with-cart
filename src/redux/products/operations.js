@@ -1,12 +1,15 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { $authInstans } from '../auth/authSlice';
 
 export const apiGetAllProducts = createAsyncThunk(
   'products/apiGetAllProducts',
   async (_, thunkApi) => {
     try {
-      const { data } = await axios.get('/allproducts');
-      return data;
+      const { data } = await $authInstans.get('products/allproducts');
+      // console.log(data.products);
+      
+      return data.products;
     } catch (error) {
       return thunkApi(error.message);
     }
